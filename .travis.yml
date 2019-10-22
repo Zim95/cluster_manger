@@ -1,0 +1,9 @@
+# install dependencies
+install:
+- pip install -r requirements.txt
+
+# command to run tests
+script:
+# unit test
+# - python -m pytest -v
+- python -m unittest discover -s 'tests/unit/' -p 'test_*.py'
