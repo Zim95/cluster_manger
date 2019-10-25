@@ -1,12 +1,13 @@
 from flask import Flask
 from flask_restful import Api
 
-from apis import Cluster, Machine
+from apis import Cluster, Machine, Ping
 
 flask_app = Flask(__name__)
 api = Api(flask_app)
 
 # add resources : api.add_resource(<Route-Handler>, '<Route>')
+api.add_resource(Ping, '/ping')
 api.add_resource(Cluster, '/cluster')
 api.add_resource(Machine, '/machine')
 

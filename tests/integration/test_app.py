@@ -129,3 +129,19 @@ class TestApiEndpointMachine(TestCase):
             json.loads(resp_mock.get_data().decode('utf-8')),
             {"mocked_response": "mocked_hello"}
         )
+
+
+class TestApiEndpointPing(TestCase):
+
+    def setUp(self):
+        self.app_test_client = app.flask_app.test_client()
+
+    def test_endpoint_functionality(self):
+        ''' Testing response code for alerts'''
+        resp_get = self.app_test_client.get('/ping')
+        self.assertEqual(
+            resp_get.get_data().decode(
+                'utf-8').strip().replace(
+                    '"', ''),
+            "PONG"
+        )
