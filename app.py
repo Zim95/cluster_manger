@@ -1,6 +1,9 @@
+# third-party
 from flask import Flask
 from flask_restful import Api
 
+# module
+from config import app_settings
 from apis import Cluster, Machine, Ping
 
 flask_app = Flask(__name__)
@@ -15,8 +18,8 @@ api.add_resource(Machine, '/machine')
 if __name__ == "__main__":
 
     flask_app.run(
-        host='0.0.0.0',
-        port=5000,
+        host=app_settings.APP_HOST,
+        port=app_settings.APP_PORT,
         debug=True,
         use_reloader=True
     )

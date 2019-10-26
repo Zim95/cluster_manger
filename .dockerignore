@@ -1,0 +1,11 @@
+# files
+.git
+Dockerfile
+.DS_Store
+.gitignore
+.dockerignore
+
+# folders
+__pycache__/
+venv/
+rough.txt
