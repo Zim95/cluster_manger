@@ -9,3 +9,5 @@ Dockerfile
 __pycache__/
 venv/
 rough.txt
+
+workspace_cluster_manager.code-workspace
