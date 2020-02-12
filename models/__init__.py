@@ -101,7 +101,7 @@ class BasePostgresModel:
     def migrate(self):
         if not self.fields or not self.tablename:
             ''' log '''
-            pass
+            return
 
         ''' Process fields'''
         foregin_keys = {}
@@ -178,7 +178,7 @@ class BasePostgresModel:
                 ),
                 ','.join(
                     [
-                        "'" + value +"'" if isinstance(
+                        "'" + value + "'" if isinstance(
                             value, str
                         ) else value
                         for value in record.values()
